@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="profile-card ">
+    <div class="profile-card__img">
+      <img
+        [src]="
+          user?.avatar
+            ? user?.avatar
+            : 'assets/images/user/avatar_employee.webp'
+        "
+        alt="profile card"
+        @imageAnimation
+      />
+    </div>
+
+    <div class="profile-card__cnt ">
+      <div class="profile-card__name">
+        {{ user?.first_name + " " + user?.last_name }}
+      </div>
+      <div class="profile-card__txt">
+        <strong>Email : </strong>{{ user?.email }}
+      </div>
+
+      <div class="profile-card-ctr">
+        <button
+          class="profile-card__button button--blue js-message-btn"
+          (click)="dialogRef.close()"
+        >
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
